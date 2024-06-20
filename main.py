@@ -5,5 +5,5 @@ DATA_PATH = "data"
 
 
 def ollama_embedding_function():
-    ollama_emb = OllamaEmbeddings(model="llama3")
+    ollama_emb = OllamaEmbeddings(model="tinyllama")
     return ollama_emb
