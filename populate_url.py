@@ -2,8 +2,7 @@ import argparse
 from langchain_community.document_loaders import RecursiveUrlLoader
 import populate_database
 import yaml
-
-URL_PATH = "url_data.yaml"
+from setting import URL_PATH
 
 
 def main():
@@ -30,7 +29,7 @@ def yaml_loader(path):
 
 
 def load_url(url):
-    loader = RecursiveUrlLoader(url)
+    loader = RecursiveUrlLoader(url, max_depth=3)
     return loader.load()
 
 

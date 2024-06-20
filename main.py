@@ -1,9 +1,7 @@
 from langchain_community.embeddings.ollama import OllamaEmbeddings
-
-CHROMA_PATH = "chroma"
-DATA_PATH = "data"
+from setting import MODEL
 
 
 def ollama_embedding_function():
-    ollama_emb = OllamaEmbeddings(model="tinyllama")
+    ollama_emb = OllamaEmbeddings(model=MODEL)
     return ollama_emb

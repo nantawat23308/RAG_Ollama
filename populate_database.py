@@ -6,10 +6,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain.schema.document import Document
 from main import ollama_embedding_function
 from langchain_community.vectorstores import Chroma
-
-
-CHROMA_PATH = "chroma"
-DATA_PATH = "data"
+from setting import CHROMA_PATH, DATA_PATH
 
 
 def main():

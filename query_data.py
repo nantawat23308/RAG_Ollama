@@ -4,8 +4,7 @@ from langchain.prompts import ChatPromptTemplate
 from langchain_community.llms.ollama import Ollama
 
 from main import ollama_embedding_function
-
-CHROMA_PATH = "chroma"
+from setting import MODEL, CHROMA_PATH
 
 PROMPT_TEMPLATE = """
 Answer the question based only on the following context:
@@ -40,7 +39,7 @@ def query_rag(query_text: str):
     prompt = prompt_template.format(context=context_text, question=query_text)
     # print(prompt)
 
-    model = Ollama(model="tinyllama")
+    model = Ollama(model=MODEL)
     response_text = model.invoke(prompt)
 
     sources = [doc.metadata.get("id", None) for doc, _score in results]
